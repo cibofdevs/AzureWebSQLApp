@@ -42,7 +42,7 @@
                   $job = $_POST['job'];
                   $date = date("Y-m-d");
                   // Insert data
-                  $sql_insert = "INSERT INTO Registration (name, email, job, date) 
+                  $sql_insert = "INSERT INTO Employee (name, email, job, date) 
                               VALUES (?,?,?,?)";
                   $stmt = $conn->prepare($sql_insert);
                   $stmt->bindValue(1, $name);
@@ -54,24 +54,24 @@
                   echo "Failed: " . $e;
               }
 
-              echo "<h3>Your're registered!</h3>";
+              echo "<h3>Submit Successfully!</h3>";
           } else if (isset($_POST['load_data'])) {
               try {
-                  $sql_select = "SELECT * FROM Registration";
+                  $sql_select = "SELECT * FROM Employee";
                   $stmt = $conn->query($sql_select);
-                  $registrants = $stmt->fetchAll(); 
-                  if(count($registrants) > 0) {
+                  $emps = $stmt->fetchAll(); 
+                  if(count($emps) > 0) {
                       echo "<h3>Employee List:</h3>";
                       echo "<table class='table'>";
                       echo "<tr><th>Name</th>";
                       echo "<th>Email</th>";
                       echo "<th>Job</th>";
                       echo "<th>Date</th></tr>";
-                      foreach($registrants as $registrant) {
-                          echo "<tr><td>".$registrant['name']."</td>";
-                          echo "<td>".$registrant['email']."</td>";
-                          echo "<td>".$registrant['job']."</td>";
-                          echo "<td>".$registrant['date']."</td></tr>";
+                      foreach($emps as $emp) {
+                          echo "<tr><td>".$emp['name']."</td>";
+                          echo "<td>".$emp['email']."</td>";
+                          echo "<td>".$emp['job']."</td>";
+                          echo "<td>".$emp['date']."</td></tr>";
                       }
                       echo "</table>";
                   } else {
