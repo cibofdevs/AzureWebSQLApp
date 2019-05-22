@@ -6,12 +6,7 @@
  <body>
    <div class="container">
        <p class="alert alert-danger">Fill in your identity, then click <strong>Submit</strong></p>
-       <form method="post" action="index.php" enctype="multipart/form-data" >
-      <!--        Name  <input type="text" name="name" id="name"/></br></br>
-             Email <input type="text" name="email" id="email"/></br></br>
-             Job <input type="text" name="job" id="job"/></br></br>
-             <input type="submit" name="submit" value="Submit" />
-             <input type="submit" name="load_data" value="Load Data" /> -->
+       <form method="post" action="index.php" enctype="multipart/form-data">
              <div class="form-group">
               <label>Name</label>
               <input type="text" name="name" id="name" class="form-control" placeholder="Enter name">
@@ -67,7 +62,7 @@
                   $registrants = $stmt->fetchAll(); 
                   if(count($registrants) > 0) {
                       echo "<h2>People who are registered:</h2>";
-                      echo "<table>";
+                      echo "<table class='table'>";
                       echo "<tr><th>Name</th>";
                       echo "<th>Email</th>";
                       echo "<th>Job</th>";
