@@ -1,12 +1,11 @@
 <html>
  <head>
- <Title>Registration Form</Title>
+ <Title>Employee Data</Title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
  </head>
  <body>
    <div class="container">
-       <h1>Register here!</h1>
-       <p class="alert alert-danger">Fill in your name and email address, then click <strong>Submit</strong> to register.</p>
+       <p class="alert alert-danger">Fill in your identity, then click <strong>Submit</strong></p>
        <form method="post" action="index.php" enctype="multipart/form-data" >
       <!--        Name  <input type="text" name="name" id="name"/></br></br>
              Email <input type="text" name="email" id="email"/></br></br>
@@ -25,6 +24,8 @@
               <label>Job</label>
               <input type="text" name="job" id="job" class="form-control" placeholder="Enter job">
             </div>
+            <input type="submit" name="submit" value="Submit" class="btn btn-success" />
+            <input type="submit" name="load_data" value="Load Data" class="btn btn-primary" />
        </form>
        <?php
           $host = "cibofappserver.database.windows.net";
