@@ -5,7 +5,7 @@
  </head>
  <body>
    <div class="container">
-       <p class="alert alert-danger">Fill in your identity, then click <strong>Submit</strong></p>
+       <p style="margin-top: 20px" class="alert alert-danger">Fill in your identity, then click <strong>Submit</strong></p>
        <form method="post" action="index.php" enctype="multipart/form-data">
              <div class="form-group">
               <label>Name</label>
@@ -61,7 +61,7 @@
                   $stmt = $conn->query($sql_select);
                   $registrants = $stmt->fetchAll(); 
                   if(count($registrants) > 0) {
-                      echo "<h2>People who are registered:</h2>";
+                      echo "<h3>Employee List:</h3>";
                       echo "<table class='table'>";
                       echo "<tr><th>Name</th>";
                       echo "<th>Email</th>";
@@ -75,7 +75,7 @@
                       }
                       echo "</table>";
                   } else {
-                      echo "<h3>No one is currently registered.</h3>";
+                      echo "<h3>Employee data is empty.</h3>";
                   }
               } catch(Exception $e) {
                   echo "Failed: " . $e;
